@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      containers:
+      - env:
+        - name: EUREKA_CLIENT_ENABLED
+          value: "false"
+        - name: SPRING_CLOUD_KUBERNETES_ENABLED
+          value: "true"
+        - name: SPRING_CLOUD_KUBERNETES_RELOAD_ENABLED
+          value: "true"
+        - name: SPRING_AUTOCONFIGURE_EXCLUDE
+          value: "org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration"
+        - name: "logging.level.org.springframework.cloud.kubernetes"
+          value: "TRACE"
+        image: markizasckuza/fungible-gateway:latest
+        imagePullPolicy: Always
+        name: gateway
+        resources:
+          requests:
+            memory: "256Mi"
+          limits:
+            memory: "512Mi"
+        ports:
+          - containerPort: 8080
