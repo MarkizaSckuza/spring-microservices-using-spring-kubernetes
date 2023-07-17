@@ -1,6 +1,6 @@
 spring:
-#  application:
-#    name: contact-us-service
+  #  application:
+  #    name: contact-us-service
   cloud:
     kubernetes:
       enabled: false
@@ -11,16 +11,16 @@ spring:
         enabled: true
         serviceId: config-server
       # target URI for config server corresponds to Kubernetes Service config-service
-#      uri: http://config-server:8888
+      #      uri: http://config-server:8888
       #uri: http://localhost:8888
       # the label must correspond with the branch name in Github
       label: main
       fail-fast: true
-#      retry:
-#        # retry configuration retrieval up to 100 times
-#        max-attempts: 30
-#        # max backoff interval
-#        max-interval: 8000
+      retry:
+        initialInterval: 2000
+        multiplier: 1.5
+        maxInterval: 60000
+        maxAttempts: 100
 eureka:
   client:
     enabled: true
