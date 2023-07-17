@@ -18,6 +18,4 @@ spring:
 #    enabled: true
 #    serviceUrl:
 #      defaultZone: http://localhost:8080/eureka/
-logging:
-  level:
-    root: debug
+
