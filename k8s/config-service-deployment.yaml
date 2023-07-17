@@ -13,6 +13,15 @@ spec:
         app: config-service
     spec:
       containers:
+        - env:
+            - name: EUREKA_CLIENT_ENABLED
+              value: "false"
+            - name: SPRING_CLOUD_KUBERNETES_ENABLED
+              value: "true"
+            - name: SPRING_CLOUD_KUBERNETES_RELOAD_ENABLED
+              value: "true"
+            - name: SPRING_AUTOCONFIGURE_EXCLUDE
+              value: "org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration"
         - name: config-service
           image: markizasckuza/fungible-config-server:latest
           imagePullPolicy: Always
