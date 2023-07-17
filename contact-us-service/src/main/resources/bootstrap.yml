@@ -10,10 +10,6 @@ spring:
       discovery:
         enabled: true
         serviceId: config-server
-      # target URI for config server corresponds to Kubernetes Service config-service
-      #      uri: http://config-server:8888
-      #uri: http://localhost:8888
-      # the label must correspond with the branch name in Github
       label: main
       fail-fast: false
       retry:
@@ -26,6 +22,6 @@ eureka:
     enabled: true
     serviceUrl:
       defaultZone: http://localhost:8080/eureka/
-logging:
-  level:
-    root: debug
+#logging:
+#  level:
+#    root: debug

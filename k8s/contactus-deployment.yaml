@@ -24,7 +24,7 @@ spec:
           value: "org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration"
         image: markizasckuza/fungible-contact-us-service:latest
         imagePullPolicy: Always
-        name: contant-us-service
+        name: contact-us-service
         resources:
           requests:
             memory: "256Mi"
