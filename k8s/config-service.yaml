@@ -9,6 +9,6 @@ spec:
   selector:
     app: config-service
   ports:
-    - port: 8888
+    - port: 8300
       protocol: TCP
-      targetPort: 8888
+      targetPort: 8080

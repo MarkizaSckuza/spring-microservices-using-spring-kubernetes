@@ -26,11 +26,11 @@ spec:
           image: markizasckuza/fungible-config-server:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8888
+            - containerPort: 8080
           readinessProbe:
             httpGet:
               path: /actuator/health
-              port: 8888
+              port: 8080
             initialDelaySeconds: 60
             timeoutSeconds: 10
             periodSeconds: 10
@@ -38,7 +38,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /actuator/health
-              port: 8888
+              port: 8080
             initialDelaySeconds: 70
             timeoutSeconds: 10
             periodSeconds: 10
