@@ -11,7 +11,7 @@ spring:
         enabled: true
         serviceId: config-server
       label: main
-      fail-fast: false
+      fail-fast: true
       retry:
         initialInterval: 2000
         multiplier: 1.5
