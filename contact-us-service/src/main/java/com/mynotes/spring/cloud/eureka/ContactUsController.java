@@ -22,7 +22,6 @@ public class ContactUsController {
     DiscoveryClient discoveryClient;
     @GetMapping("/services")
     public Iterable<String> findAll() {
-        discoveryClient.getInstances("config-service").get(0).getUri();
         return discoveryClient.getServices();
     }
 
