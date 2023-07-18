@@ -1,10 +1,8 @@
 package com.mynotes.spring.cloud.eureka;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
@@ -19,6 +17,13 @@ public class ContactUsController {
 
     @Autowired
     RestTemplate rest;
+
+    @Autowired
+    DiscoveryClient discoveryClient;
+    @GetMapping("/services")
+    public Iterable<String> findAll() {
+        return discoveryClient.getServices();
+    }
 
     @RequestMapping(value = "/address", method = RequestMethod.GET)
     @ResponseBody
