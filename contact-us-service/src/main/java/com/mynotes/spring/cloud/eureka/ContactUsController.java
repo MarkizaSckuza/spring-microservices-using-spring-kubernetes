@@ -22,7 +22,13 @@ public class ContactUsController {
     DiscoveryClient discoveryClient;
     @GetMapping("/services")
     public Iterable<String> findAll() {
+        discoveryClient.getInstances("config-service").get(0).getUri();
         return discoveryClient.getServices();
+    }
+
+    @GetMapping("/service")
+    public String findOne() {
+        return discoveryClient.getInstances("config-service").get(0).getUri().toString();
     }
 
     @RequestMapping(value = "/address", method = RequestMethod.GET)
