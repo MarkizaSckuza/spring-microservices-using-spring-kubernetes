@@ -1,9 +1,13 @@
 package com.mynotes.spring.cloud.eureka;
 
+import org.apache.tomcat.util.codec.binary.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/contact-us")
@@ -26,8 +30,8 @@ public class ContactUsController {
     }
 
     @GetMapping("/service")
-    public String findOne() {
-        return discoveryClient.getInstances("config-service").get(0).getUri().toString();
+    public List<ServiceInstance> findOne() {
+        return discoveryClient.getInstances("config-service");
     }
 
     @RequestMapping(value = "/address", method = RequestMethod.GET)
