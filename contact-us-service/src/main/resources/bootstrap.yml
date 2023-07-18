@@ -2,6 +2,8 @@ spring:
   #  application:
   #    name: contact-us-service
   cloud:
+    bootstrap:
+      enabled: true
     kubernetes:
       enabled: false
       reload:
