@@ -28,7 +28,7 @@ spring:
         enabled: true
         serviceId: config-server
       label: main
-      fail-fast: true
+#      fail-fast: true
       retry:
         initialInterval: 2000
         multiplier: 1.5
@@ -39,8 +39,8 @@ eureka:
     enabled: true
     serviceUrl:
       defaultZone: http://localhost:8080/eureka/
-#logging:
-#  level:
-#    root: debug
+logging:
+  level:
+    root: debug
 #server:
 #  port: 8181
