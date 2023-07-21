@@ -6,8 +6,8 @@ spring:
 #      enabled: false
 #      reload:
 #        enabled: false
-#server:
-#  port: 8181
+server:
+  port: 8181
 #management:
 #  endpoints:
 #    web:
