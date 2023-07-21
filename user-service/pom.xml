@@ -97,7 +97,8 @@
                     <tags>
                       <tag>${BUILD_BRANCH}</tag>
                     </tags>
-                    <from>openjdk:11.0.5-jre-slim</from>
+<!--                    <from>openjdk:11.0.5-jre-slim</from>-->
+                    <from>openjdk:17.0.1-jdk-slim</from>
                     <!--<tags> <tag>${project.version}</tag> </tags> -->
                     <entryPoint>
                       <exec>

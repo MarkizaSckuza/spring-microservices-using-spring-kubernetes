@@ -13,8 +13,8 @@ spring:
           uri: https://github.com/MarkizaSckuza/config-server
           default-label: main
           search-paths: configuration
-server:
-  port: 8585
+#server:
+#  port: 8585
 eureka:
   client:
     enabled: true
@@ -33,6 +33,6 @@ eureka:
 #    enabled: true
 #    serviceUrl:
 #      defaultZone: http://localhost:8080/eureka/
-logging:
-  level:
-    root: debug
+#logging:
+#  level:
+#    root: debug

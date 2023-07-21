@@ -22,6 +22,10 @@
             <artifactId>spring-cloud-starter-kubernetes</artifactId>
             <version>1.1.10.RELEASE</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
@@ -59,6 +63,15 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+<!--            <version>3.1.1.RELEASE</version>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
         </dependency>
     </dependencies>
 
@@ -102,7 +115,8 @@
                                             <!--											<tag>${BUILD_BRANCH}</tag>-->
                                             <tag>latest</tag>
                                         </tags>
-                                        <from>openjdk:11.0.5-jre-slim</from>
+<!--                                        <from>openjdk:11.0.5-jre-slim</from>-->
+                                        <from>openjdk:17.0.1-jdk-slim</from>
                                         <!--<tags> <tag>${project.version}</tag> </tags> -->
                                         <entryPoint>
                                             <exec>

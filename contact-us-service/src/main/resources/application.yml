@@ -1,13 +1,13 @@
 spring:
   application:
     name: contact-us-service
-#  cloud:
+  config:
+    import: "optional:configserver:"
+  #  cloud:
 #    kubernetes:
 #      enabled: false
 #      reload:
 #        enabled: false
-server:
-  port: 8181
 #management:
 #  endpoints:
 #    web:
@@ -18,4 +18,29 @@ server:
 #    enabled: true
 #    serviceUrl:
 #      defaultZone: http://localhost:8080/eureka/
-
+  cloud:
+    kubernetes:
+      enabled: false
+      reload:
+        enabled: false
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+      label: main
+      fail-fast: true
+      retry:
+        initialInterval: 2000
+        multiplier: 1.5
+        maxInterval: 60000
+        maxAttempts: 100
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+#logging:
+#  level:
+#    root: debug
+#server:
+#  port: 8181
