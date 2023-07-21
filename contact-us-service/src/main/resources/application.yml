@@ -1,8 +1,10 @@
 spring:
   application:
     name: contact-us-service
-  config:
-    import: "optional:configserver:"
+  main:
+    allow-bean-definition-overriding: true
+#  config:
+#    import: "optional:configserver:"
   #  cloud:
 #    kubernetes:
 #      enabled: false
@@ -23,17 +25,17 @@ spring:
       enabled: false
       reload:
         enabled: false
-    config:
-      discovery:
-        enabled: true
-        serviceId: config-server
-      label: main
-#      fail-fast: true
-      retry:
-        initialInterval: 2000
-        multiplier: 1.5
-        maxInterval: 60000
-        maxAttempts: 100
+#    config:
+#      discovery:
+#        enabled: true
+#        serviceId: config-server
+#      label: main
+##      fail-fast: true
+#      retry:
+#        initialInterval: 2000
+#        multiplier: 1.5
+#        maxInterval: 60000
+#        maxAttempts: 100
 eureka:
   client:
     enabled: true
