@@ -13,8 +13,8 @@ import java.util.List;
 @RequestMapping("/contact-us")
 public class ContactUsController {
 
-//    @Autowired
-//    ContactUsConfig config;
+    @Autowired
+    ContactUsConfig config;
 
     @Autowired
     Configuration configuration;
@@ -61,10 +61,10 @@ public class ContactUsController {
     /*
         By default, should return "Message from contact us service"
      */
-//    @RequestMapping(value = "/message", method = RequestMethod.GET)
-//    @ResponseBody
-//    public String message() {
-//        return config.getMessage();
-//    }
+    @RequestMapping(value = "/message", method = RequestMethod.GET)
+    @ResponseBody
+    public String message() {
+        return config.getMessage();
+    }
 
 }
