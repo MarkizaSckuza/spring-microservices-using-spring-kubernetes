@@ -1,13 +1,15 @@
 package com.mynotes.spring.cloud.eureka;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "bean")
+@ConfigurationProperties(prefix = "")
 public class ContactUsConfig {
 
-    private String message = "Message from contact us service";
+    @Value("${message}")
+    private String message;
 
     public String getMessage() {
         return message;

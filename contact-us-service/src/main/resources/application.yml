@@ -1,3 +1,5 @@
+message: "Default msg from props"
+
 spring:
   application:
     name: contact-us-service
