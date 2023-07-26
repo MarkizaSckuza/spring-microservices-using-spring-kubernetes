@@ -24,6 +24,7 @@ public class ContactUsController {
 
     @Autowired
     DiscoveryClient discoveryClient;
+
     @GetMapping("/services")
     public Iterable<String> findAll() {
         return discoveryClient.getServices();

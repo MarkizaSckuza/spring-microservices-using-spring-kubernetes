@@ -1,4 +1,4 @@
-message: "Default msg from props"
+#message: "Default msg from props"
 
 spring:
   application:
@@ -43,8 +43,8 @@ eureka:
     enabled: true
     serviceUrl:
       defaultZone: http://localhost:8080/eureka/
-logging:
-  level:
-    root: debug
+#logging:
+#  level:
+#    root: debug
 #server:
 #  port: 8181

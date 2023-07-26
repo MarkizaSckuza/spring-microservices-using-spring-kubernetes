@@ -20,10 +20,20 @@ spec:
           value: "true"
         - name: SPRING_CLOUD_KUBERNETES_RELOAD_ENABLED
           value: "true"
+#        - name: SPRING_CLOUD_KUBERNETES_RELOAD_MODE
+#          value: "event"
+#        - name: SPRING_CLOUD_KUBERNETES_RELOAD_STRATEGY
+#          value: "RESTART_CONTEXT"
         - name: SPRING_CLOUD_KUBERNETES_DISCOVERY_ENABLED
           value: "true"
         - name: SPRING_CLOUD_KUBERNETES_DISCOVERY_DISCOVERY-SERVER-URL
           value: "http://spring-cloud-kubernetes-discoveryserver.default.svc.cluster.local"
+        - name: SPRING_CLOUD_KUBERNETES_CONFIG_ENABLED
+          value: "true"
+        - name: SPRING_CLOUD_KUBERNETES_CONFIG_NAMESPACE
+          value: "default"
+        - name: SPRING_CLOUD_KUBERNETES_CONFIG_NAME
+          value: "contact-us-service"
         - name: SPRING_AUTOCONFIGURE_EXCLUDE
           value: "org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration"
         image: markizasckuza/fungible-contact-us-service:latest

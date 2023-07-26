@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: contact-us-service
 data:
-  application.yml: |
-    message: "Testing reload ! Message from contact us service"
+  application.yml: |-
+    bean.message: "Testing reload ! Message from contact us service"
 
