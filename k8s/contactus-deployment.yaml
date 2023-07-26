@@ -22,8 +22,8 @@ spec:
           value: "true"
 #        - name: SPRING_CLOUD_KUBERNETES_RELOAD_MODE
 #          value: "event"
-#        - name: SPRING_CLOUD_KUBERNETES_RELOAD_STRATEGY
-#          value: "RESTART_CONTEXT"
+        - name: SPRING_CLOUD_KUBERNETES_RELOAD_STRATEGY
+          value: "RESTART_CONTEXT"
         - name: SPRING_CLOUD_KUBERNETES_DISCOVERY_ENABLED
           value: "true"
         - name: SPRING_CLOUD_KUBERNETES_DISCOVERY_DISCOVERY-SERVER-URL
@@ -34,6 +34,8 @@ spec:
           value: "default"
         - name: SPRING_CLOUD_KUBERNETES_CONFIG_NAME
           value: "contact-us-service"
+        - name: SPRING_CLOUD_KUBERNETES_CONFIG_SOURCES_NAME
+          value: "c1"
         - name: SPRING_AUTOCONFIGURE_EXCLUDE
           value: "org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration"
         image: markizasckuza/fungible-contact-us-service:latest

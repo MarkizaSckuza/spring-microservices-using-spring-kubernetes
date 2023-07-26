@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spring-cloud-kubernetes-configserver
-        image: springcloud/spring-cloud-kubernetes-configserver
+        image: springcloud/spring-cloud-kubernetes-configserver:3.0.0-SNAPSHOT
         imagePullPolicy: IfNotPresent
         env:
         - name: SPRING_PROFILES_INCLUDE

@@ -5,6 +5,15 @@ spring:
     name: contact-us-service
   main:
     allow-bean-definition-overriding: true
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
 #  config:
 #    import: "optional:configserver:"
   #  cloud:
