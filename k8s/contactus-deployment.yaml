@@ -22,8 +22,8 @@ spec:
           value: "true"
 #        - name: SPRING_CLOUD_KUBERNETES_RELOAD_MODE
 #          value: "event"
-        - name: SPRING_CLOUD_KUBERNETES_RELOAD_STRATEGY
-          value: "RESTART_CONTEXT"
+#        - name: SPRING_CLOUD_KUBERNETES_RELOAD_STRATEGY
+#          value: "RESTART_CONTEXT"
         - name: SPRING_CLOUD_KUBERNETES_DISCOVERY_ENABLED
           value: "true"
         - name: SPRING_CLOUD_KUBERNETES_DISCOVERY_DISCOVERY-SERVER-URL
