@@ -1,5 +1,4 @@
 #message: "Default msg from props"
-
 spring:
   application:
     name: contact-us-service
@@ -7,6 +6,10 @@ spring:
     allow-bean-definition-overriding: true
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
   endpoint:
     restart:
       enabled: true
@@ -56,4 +59,10 @@ eureka:
 #  level:
 #    root: debug
 #server:
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          kubernetes: DEBUG
 #  port: 8181
