@@ -25,6 +25,8 @@ spec:
               value: "main"
             - name: SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH-PATHS
               value: "configuration"
+            - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_KUBERNETES
+              value: "DEBUG"
           readinessProbe:
             httpGet:
               port: 8888
