@@ -13,26 +13,25 @@ spec:
         app: spring-cloud-kubernetes-configserver
     spec:
       containers:
-      - env:
-        - name: SPRING_CLOUD_CONFIG_SERVER_GIT_URI
-          value: "https://github.com/MarkizaSckuza/config-server"
-        - name: SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT-LABEL
-          value: "main"
-        - name: SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH-PATHS
-          value: "configuration"
-      - name: spring-cloud-kubernetes-configserver
-        image: springcloud/spring-cloud-kubernetes-configserver:3.0.1
-        imagePullPolicy: IfNotPresent
-        env:
-        - name: SPRING_PROFILES_INCLUDE
-          value: "kubernetes"
-        readinessProbe:
-          httpGet:
-            port: 8888
-            path: /actuator/health/readiness
-        livenessProbe:
-          httpGet:
-            port: 8888
-            path: /actuator/health/liveness
-        ports:
-        - containerPort: 8888
+        - name: spring-cloud-kubernetes-configserver
+          image: springcloud/spring-cloud-kubernetes-configserver:3.0.1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: SPRING_PROFILES_INCLUDE
+              value: "kubernetes"
+            - name: SPRING_CLOUD_CONFIG_SERVER_GIT_URI
+              value: "https://github.com/MarkizaSckuza/config-server"
+            - name: SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT-LABEL
+              value: "main"
+            - name: SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH-PATHS
+              value: "configuration"
+          readinessProbe:
+            httpGet:
+              port: 8888
+              path: /actuator/health/readiness
+          livenessProbe:
+            httpGet:
+              port: 8888
+              path: /actuator/health/liveness
+          ports:
+            - containerPort: 8888
