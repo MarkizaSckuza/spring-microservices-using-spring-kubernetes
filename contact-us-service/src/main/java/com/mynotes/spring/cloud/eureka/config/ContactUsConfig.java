@@ -1,4 +1,4 @@
-package com.mynotes.spring.cloud.eureka;
+package com.mynotes.spring.cloud.eureka.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;

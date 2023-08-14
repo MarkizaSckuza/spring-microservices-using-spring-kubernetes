@@ -7,6 +7,18 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+
+  datasource:
+    url: jdbc:mysql://${DB_SERVER}:${DB_PORT:3306}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
   #management:
   #  endpoints:
   #    web:

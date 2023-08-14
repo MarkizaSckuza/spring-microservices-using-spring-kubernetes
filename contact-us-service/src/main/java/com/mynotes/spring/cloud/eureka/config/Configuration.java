@@ -1,4 +1,4 @@
-package com.mynotes.spring.cloud.eureka;
+package com.mynotes.spring.cloud.eureka.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.retry.annotation.EnableRetry;

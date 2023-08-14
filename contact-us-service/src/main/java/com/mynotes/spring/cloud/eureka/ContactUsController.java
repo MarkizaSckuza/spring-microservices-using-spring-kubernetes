@@ -1,6 +1,9 @@
 package com.mynotes.spring.cloud.eureka;
 
-import org.apache.tomcat.util.codec.binary.StringUtils;
+import com.mynotes.spring.cloud.eureka.config.Configuration;
+import com.mynotes.spring.cloud.eureka.config.ContactUsConfig;
+import com.mynotes.spring.cloud.eureka.entity.Student;
+import com.mynotes.spring.cloud.eureka.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -24,6 +27,9 @@ public class ContactUsController {
 
     @Autowired
     DiscoveryClient discoveryClient;
+
+    @Autowired
+    StudentsService studentsService;
 
     @GetMapping("/services")
     public Iterable<String> findAll() {
@@ -66,6 +72,12 @@ public class ContactUsController {
     @ResponseBody
     public String message() {
         return config.getMessage();
+    }
+
+
+    @GetMapping("/students")
+    public List<Student> getAllStudents() {
+        return studentsService.getAllStudents();
     }
 
 }

@@ -42,6 +42,26 @@ spec:
 #          value: "c1"
         - name: SPRING_AUTOCONFIGURE_EXCLUDE
           value: "org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration"
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: mysql-user-password
+        - name: DB_SERVER
+          valueFrom:
+            configMapKeyRef:
+              name:  mysql-config-map
+              key: mysql-server
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name:  mysql-config-map
+              key: mysql-database-name
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config-map
+              key: mysql-user-username
         image: markizasckuza/fungible-contact-us-service:latest
         imagePullPolicy: Always
         name: contact-us-service
