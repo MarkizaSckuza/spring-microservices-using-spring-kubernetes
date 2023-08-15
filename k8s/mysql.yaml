@@ -6,10 +6,10 @@ items:
     kind: ConfigMap
     metadata:
       name: mysql-config-map
-      data:
-        mysql-server: demo-app-mysql    # The name of mysql service
-        mysql-database-name: demoDb     # The name of the database used by the demo app
-        mysql-user-username: myUser     # A new created user for the demo app
+    data:
+      mysql-server: demo-app-mysql    # The name of mysql service
+      mysql-database-name: demoDb     # The name of the database used by the demo app
+      mysql-user-username: myUser     # A new created user for the demo app
   - apiVersion: v1
     kind: Secret
     metadata:
