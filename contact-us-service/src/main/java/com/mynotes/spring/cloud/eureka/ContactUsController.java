@@ -80,4 +80,9 @@ public class ContactUsController {
         return studentsService.getAllStudents();
     }
 
+    @PostMapping("/students/add")
+    public void addStudent(@RequestBody Student student) {
+        studentsService.saveStudent(student);
+    }
+
 }

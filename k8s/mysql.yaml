@@ -43,6 +43,18 @@ items:
       resources:
         requests:
           storage: 1Gi
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: mysql-pv
+    spec:
+      storageClassName:
+      capacity:
+      storage: 1Gi
+      accessModes:
+        - ReadWriteOnce
+      hostPath:
+        path: "/mnt/pv1"
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
